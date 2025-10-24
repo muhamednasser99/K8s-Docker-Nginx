@@ -1,0 +1,54 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: app1
+  labels:
+    app : app1
+spec:
+  containers:
+  - name: app1
+    image: mohamednasser733/nodejs-app1
+    ports:
+      - containerPort: 3000
+
+---      
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-service1
+spec:
+  selector:
+    app : app1
+  ports:
+  - protocol: TCP
+    port: 3000
+    targetPort: 3000
+  type: ClusterIP   
+
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: app2
+  labels:
+    app : app2
+spec:
+  containers:
+  - name: app2
+    image: mohamednasser733/nodejs-app2
+    ports:
+      - containerPort: 3000
+      
+---      
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-service2
+spec:
+  selector:
+    app : app2
+  ports:
+  - protocol: TCP
+    port: 3000
+    targetPort: 3000
+  type: ClusterIP
