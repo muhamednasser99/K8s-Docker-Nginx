@@ -1,4 +1,4 @@
-# 🚀 Node.js Load Balancing with Docker, Kubernetes, and Nginx
+# Node.js Load Balancing with Docker, Kubernetes, and Nginx
 
 It demonstrates how to containerize, deploy, and load balance multiple Node.js applications using **Docker**, **Kubernetes**, and **Nginx Reverse Proxy**.
 
